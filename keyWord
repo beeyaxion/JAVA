@@ -1,0 +1,26 @@
+【strictfp】精确
+1.strictfp, 即 strict float point (精确浮点)。
+你可以将一个类、接口以及方法声明为strictfp，但是不允许对接口中的方法以及构造函数声明strictfp关键字，例如下面的代码：
+1. 合法的使用关键字strictfp
+strictfp interface A {}
+public strictfp class FpDemo1 {
+    strictfp void f() {}
+}
+2. 错误的使用方法
+interface A {
+    strictfp void f();
+}
+public class FpDemo2 {
+    strictfp FpDemo2() {}
+}
+
+
+【Transient】透明
+java关键字Transient
+    Java的serialization提供了一种持久化对象实例的机制。当持久化对象时，可能有一个特殊的对象数据成员，我们不想用serialization机制来保存它。为了在一个特定对象的一个域上关闭serialization，可以在这个域前加上关键字transient。   
+    transient是Java语言的关键字，用来表示一个域不是该对象串行化的一部分。当一个对象被串行化的时候，transient型变量的值不包括在串行化的表示中，然而非transient型的变量是被包括进去的。  
+注意static变量也是可以串行化的
+
+
+【volatile】异变
+volatile是Java提供的一种轻量级的同步机制，在并发编程中，它也扮演着比较重要的角色。同synchronized相比（synchronized通常称为重量级锁），volatile更轻量级，相比使用synchronized所带来的庞大开销，倘若能恰当的合理的使用volatile，自然是美事一桩。
